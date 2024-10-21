@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lua Programming Language</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#syntax">Syntax</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <ul>
+                <li><a href="#apps">Applications Using Lua</a></li>
+                <li><a href="#languages">Languages That Compile to Lua</a></li>
+            </ul>
+            <li><a href="#book">The Book</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <h1 id="title">The Lua Programming Language</h1>
+
+        <section>
+            <h2 id="intro">Introduction</h2>
+            <p>Lua is a dynamically typed embedded scripting language. It has a minimal syntax making it beginner friendly, but contains a powerful C API allowing to be embedded into and used by any application, making Lua capable of modifying the behavior of programs.</p>
+        </section>
+
+        <section>
+            <h2 id="history">History</h2>
+            <p>Lua was created on 1993 in Brazil by a group of computer researchers to use as an embedded data language for customizing software.<br>
+                Brazil has a strong trade barrier for computer software, which made it impossible to purchase customized software.<br>
+            The language was influenced by C++, CLU, and Scheme</p>
+            <p>Current version of Lua, 5.4, was released on June 29th, 2020. It introduced a generational mode for garbage collection, constant variables, and to-be-closed variables.</p>
+            <p>LuaJit is a Just-In-Time (JIT) compiler for Lua, enabling Lua programs to run faster.
+                It achieves this by compiling Lua code into machine code while it is running, allowing it to take advantage of the CPU's hardware without having to precompile scripts.
+                LuaJit was created by Mike Pall in 2005, and is available under the MIT license.
+            </p>
+        </section>
+
+        <section>
+            <h2 id="syntax">Syntax</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Term</th>
+                        <th>Description</th>
+                        <th>Usage</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nil</td>
+                        <td>Represents the absence of a value</td>
+                        <td><code>value = nil <br>print(value) -- nil</code></td>
+                        <td>nil</td>
+                    </tr>
+                    <tr>
+                        <td>Number</td>
+                        <td>A numeric value.<br>Lua does not differentiate between whole numbers and fractions</td>
+                        <td><code>a, b, c = 10, 0.5, 3.14</code></td>
+                        <td>number</td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>A sequence of characters.<br>All strings in Lua are 8-bit ASCII.</td>
+                        <td><code>message = "Hello, World!"<br>print(message) -- Hello, World!</code></td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>A true or false value</td>
+                        <td><code>value = true or false<br>print(value) -- true</code></td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>Table</td>
+                        <td>A table is an associative array, meaning it acts as both an array and a map.<br>It is the main way of structuring data in Lua.</td>
+                        <td><code>value = {} -- create table<br>
+                        value[1] = 1 -- Table indexes start at 1<br>
+                        value.foo = "bar" -- Dot notation can be used for accessing string keys<br>
+                        value["local"] = {1, 2, 3, name = "value"} -- Tables can contain other tables<br>
+                        print(value) -- "table: 0x7fffbeef" the memory address of the table</code></td>
+                        <td>table</td>
+                    </tr>
+                    <tr>
+                        <td>Function</td>
+                        <td>Creates a function that can be called later</td>
+                        <td><code>function square(n)<br>&emsp;return n ^ 2<br>end<br><br>print(square(4)) -- 16</code></td>
+                        <td>function</td>
+                    </tr>
+                    <tr>
+                        <td>Local assignment</td>
+                        <td>Makes variables local to a function,<br>preventing them from being used outside and making the code run faster</td>
+                        <td><code>local value = 10</code></td>
+                    </tr>
+                    <tr>
+                        <td>If-elseif-else</td>
+                        <td>Used to branch on the result of a boolean condition</td>
+                        <td><code>if condition then<br>&emsp;-- if clause<br>elseif otherCondition then<br>&emsp;-- elseif clause<br>else<br>&emsp;-- else clause<br>end</code></td>
+                    </tr>
+                    <tr>
+                        <td>While loop</td>
+                        <td>Used to repeat code while a given condition is true</td>
+                        <td><code>while condition do<br>&emsp;-- while clause<br>end</code></td>
+                    </tr>
+                    <tr>
+                        <td>For loop</td>
+                        <td>Used to repeat code a certain amount of times,<br>or loop over the contents of a table</td>
+                        <td><code>for i = start, stop, step do<br>&emsp;-- numeric for<br>end<br><br>for k, v in pairs(table) do<br>&emsp;-- generic for<br>end</code></td>
+                    </tr>
+                    <tr>
+                        <td>Arithmetic operators</td>
+                        <td>Operations on numbers</td>
+                        <td><code>value = 10 + 5 - 3 * 7 / 8 % 15 ^ 2</code></td>
+                        <td>addition +, subtraction -, multiplication *, division /, modulo %, exponentiation ^</td>
+                    </tr>
+                    <tr>
+                        <td>Logical operators</td>
+                        <td>Operators for boolean value</td>
+                        <td><code>value = a and b or not c</code></td>
+                        <td>and, or, not</td>
+                    </tr>
+                    <tr>
+                        <td>Comparison operators</td>
+                        <td>Compares the value to two variables and produces either true or false</td>
+                        <td><code>10 == 10 -- true<br>
+                        10 ~= 20 -- true<br>
+                        15 &lt; 20 -- true<br>
+                        20 &lt;= 20 -- true<br>
+                        30 &gt; 20 -- true<br>
+                        30 &gt;= 30 -- true</code></td>
+                        <td>equal ==, not equal ~=,<br>less than &lt;, less than or equal &lt;=,<br>greater than &gt;, greater than or equal &gt;=</td>
+                    </tr>
+                    <tr>
+                        <td>Miscellaneous operators</td>
+                        <td>Operators that are special to Lua</td>
+                        <td><code>message = "Hello, " .. "World!"<br>print(#message) -- 13</code></td>
+                        <td>string concatenation .., string and table length #</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2 id="usage">Usage</h2>
+            <p>Lua was designed to be embedded into applications to enable users to write their own functionality in Lua.
+                This is done using a C API, allowing C code to call Lua code, and Lua code to call C code.
+                This enables users to not only create their own functionality, but to also use functions provided by the application.
+            </p>
+            <section>
+                <h3 id="apps">Applications Using Lua</h3>
+                <ul>
+                    <li>Neovim text editor</li>
+                    <li>Nginx web server</li>
+                    <li>Cern for their Methodical Accelerator Design</li>
+                    <li>Love-2D game framework</li>
+                    <li>CC-Tweaked mod for Minecraft</li>
+                    <li>CERN for their Methodical Accelerator Design software</li>
+                    <li>Roblox</li>
+                    <li>Garry's Mod</li>
+                    <li>World of Warcraft</li>
+                    <li>Factorio</li>
+                    <li>itch.io's website</li>
+                </ul>
+            </section>
+            <section>
+                <h3 id="languages">Languages That Compile to Lua</h3>
+                <ul>
+                    <li>Moonscript</li>
+                    <li>Urn (lisp dialect)</li>
+                    <li>Haxe</li>
+                    <li>Teal (statically typed Lua)</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="book">
+            <h2>The Book</h2>
+            <!-- Behold, the special tag that was not covered in class! -->
+            <!-- It embeds a webpage as a window in the document -->
+            <iframe src="https://www.lua.org/pil/contents.html" height="400" width="600" title="Programming in Lua"></iframe>
+        </section>
+
+        <section id="references">
+            <h2>References</h2>
+            <ul>
+                <li>Ierusalimschy, Roberto (December 2003), <a href="https://www.lua.org/pil/contents.html">Programming in Lua</a>, Lua.org</li>
+                <li>Wikipedia (December 2004), <a href="https://en.wikipedia.org/wiki/Lua_(programming_language)">Lua</a>, Wikipedia</li>
+                <li>Fireship (February 2022), <a href="https://youtu.be/jUuqBZwwkQw?si=PEEdr5Ven3kiztGf">Lua in 100 Seconds</a>, youtube.com</li>
+                <li>Pall, Mike (2005), <a href="https://luajit.org/luajit.html">LuaJit</a>, luajit.org</li>
+            </ul>
+        </section>
+    </article>
+    
+</body>
+</html>
