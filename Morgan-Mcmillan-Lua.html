@@ -11,11 +11,12 @@
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#history">History</a></li>
             <li><a href="#syntax">Syntax</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <ul>
-                <li><a href="#apps">Applications Using Lua</a></li>
-                <li><a href="#languages">Languages That Compile to Lua</a></li>
-            </ul>
+            <li><a href="#usage">Usage</a>
+                <ul>
+                    <li><a href="#apps">Applications Using Lua</a></li>
+                    <li><a href="#languages">Languages That Compile to Lua</a></li>
+                </ul>
+            </li>
             <li><a href="#book">The Book</a></li>
             <li><a href="#references">References</a></li>
         </ul>
@@ -97,21 +98,25 @@
                         <td>Local assignment</td>
                         <td>Makes variables local to a function,<br>preventing them from being used outside and making the code run faster</td>
                         <td><code>local value = 10</code></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>If-elseif-else</td>
                         <td>Used to branch on the result of a boolean condition</td>
                         <td><code>if condition then<br>&emsp;-- if clause<br>elseif otherCondition then<br>&emsp;-- elseif clause<br>else<br>&emsp;-- else clause<br>end</code></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>While loop</td>
                         <td>Used to repeat code while a given condition is true</td>
                         <td><code>while condition do<br>&emsp;-- while clause<br>end</code></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>For loop</td>
                         <td>Used to repeat code a certain amount of times,<br>or loop over the contents of a table</td>
                         <td><code>for i = start, stop, step do<br>&emsp;-- numeric for<br>end<br><br>for k, v in pairs(table) do<br>&emsp;-- generic for<br>end</code></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Arithmetic operators</td>
