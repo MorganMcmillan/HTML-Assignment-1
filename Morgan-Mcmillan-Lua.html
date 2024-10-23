@@ -6,12 +6,14 @@
     <title>The Lua Programming Language</title>
 </head>
 <body>
+    <!-- All this is unrelated to the content of the document, so it is left outside of any article or section -->
     <a href="index.html">Back to index</a>
     <nav>
         <ul>
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#history">History</a></li>
             <li><a href="#syntax">Syntax</a></li>
+            <!-- <ul>s cannot be placed inside other <ul>s, and must be contained within a <li>. -->
             <li><a href="#usage">Usage</a>
                 <ul>
                     <li><a href="#apps">Applications Using Lua</a></li>
@@ -23,10 +25,13 @@
         </ul>
     </nav>
 
+    <!-- Articles represent content that is independent of each other, so it's used to enclose the content of the page. -->
     <article>
         <h1 id="title">The Lua Programming Language</h1>
+        <!-- The required image. -->
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Lua-Logo.svg" alt="Lua Logo" width="200">
 
+        <!-- Sections represent content that is related to each other, and so is used for each individual topic in the article. -->
         <section>
             <h2 id="intro">Introduction</h2>
             <p>Lua is a dynamically typed embedded scripting language. It has a minimal syntax making it beginner friendly, but contains a powerful C API allowing to be embedded into and used by any application, making Lua capable of modifying the behavior of programs.</p>
@@ -46,6 +51,11 @@
 
         <section>
             <h2 id="syntax">Syntax</h2>
+            <!-- A giant table representing the language's syntax. -->
+            <!-- Term references a keyword, operation, or data type. -->
+            <!-- Description describes what the term is about. -->
+            <!-- Usage show a syntax example embedded in a <code> tag, using <br> tags for newlines and &emsp; for indentation -->
+            <!-- Type is either the type name of a data type returned from `type(value)`, the name and symbols of operators, or left blank to keep the validator from failing. -->
             <table>
                 <thead>
                     <tr>
@@ -159,6 +169,7 @@
                 This is done using a C API, allowing C code to call Lua code, and Lua code to call C code.
                 This enables users to not only create their own functionality, but to also use functions provided by the application.
             </p>
+            <!-- Sections within sections. -->
             <section>
                 <h3 id="apps">Applications Using Lua</h3>
                 <ul>
@@ -189,10 +200,12 @@
         <section id="book">
             <h2>The Book</h2>
             <!-- Behold, the special tag that was not covered in class! -->
-            <!-- It embeds a webpage as a window in the document -->
+            <!-- It embeds a webpage as a window in the document, making an HTTP request for the document and placing it inside the tag. -->
+            <!-- Take a look in the inspector! -->
             <iframe src="https://www.lua.org/pil/contents.html" height="400" width="600" title="Programming in Lua"></iframe>
         </section>
 
+        <!-- Sources used for information. The citation format is similar to Wikipedia's. -->
         <section id="references">
             <h2>References</h2>
             <ul>
