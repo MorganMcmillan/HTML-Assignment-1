@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/Morgan-McMillan.css">
     <title>The Lua Programming Language</title>
 </head>
 <body>
     <!-- All this is unrelated to the content of the document, so it is left outside of any article or section -->
-    <a href="index.html">Back to index</a>
-    <nav>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#history">History</a></li>
-            <li><a href="#syntax">Syntax</a></li>
-            <!-- <ul>s cannot be placed inside other <ul>s, and must be contained within a <li>. -->
-            <li><a href="#usage">Usage</a>
-                <ul>
-                    <li><a href="#apps">Applications Using Lua</a></li>
-                    <li><a href="#languages">Languages That Compile to Lua</a></li>
-                </ul>
-            </li>
-            <li><a href="#book">The Book</a></li>
-            <li><a href="#references">References</a></li>
-        </ul>
-    </nav>
+    <aside class="top-nav">
+        <a href="index.html" class="left-link">Home</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#syntax">Syntax</a></li>
+                <!-- <ul>s cannot be placed inside other <ul>s, and must be contained within a <li>. -->
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#book">Books</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </nav>
+        <a href="#top" class="right-link">Top</a>
+    </aside>
 
-    <!-- Articles represent content that is independent of each other, so it's used to enclose the content of the page. -->
-    <article>
+    <!-- Main is used instead of article because there's only a single concept expressed in this page -->
+    <main>
         <h1 id="title">The Lua Programming Language</h1>
         <!-- The required image. -->
         <img src="images/Lua-Logo.svg" alt="Lua Logo" width="200">
@@ -39,14 +38,16 @@
 
         <section>
             <h2 id="history">History</h2>
-            <p>Lua was created on 1993 in Brazil by a group of computer researchers to use as an embedded data language for customizing software.<br>
-                Brazil has a strong trade barrier for computer software, which made it impossible to purchase customized software.<br>
-            The language was influenced by C++, CLU, and Scheme</p>
-            <p>Current version of Lua, 5.4, was released on June 29th, 2020. It introduced a generational mode for garbage collection, constant variables, and to-be-closed variables.</p>
-            <p>LuaJit is a Just-In-Time (JIT) compiler for Lua, enabling Lua programs to run faster.
-                It achieves this by compiling Lua code into machine code while it is running, allowing it to take advantage of the CPU's hardware without having to precompile scripts.
-                LuaJit was created by Mike Pall in 2005, and is available under the MIT license.
-            </p>
+            <div class="history-multicol">
+                <p>Lua was created on 1993 in Brazil by a group of computer researchers to use as an embedded data language for customizing software.<br>
+                    Brazil has a strong trade barrier for computer software, which made it impossible to purchase customized software.<br>
+                    The language was influenced by C++, CLU, and Scheme.</p>
+                <p>The current version of Lua, 5.4, was released on June 29th, 2020. It introduced a generational mode for garbage collection, constant variables, and to-be-closed variables.</p>
+                <p>LuaJit is a Just-In-Time (JIT) compiler for Lua, enabling Lua programs to run faster.
+                    It achieves this by compiling Lua code into machine code while it is running, allowing it to take advantage of the CPU's hardware without having to precompile scripts.
+                    LuaJit was created by Mike Pall in 2005, and is available under the MIT license.
+                </p>
+            </div>
         </section>
 
         <section>
@@ -56,7 +57,7 @@
             <!-- Description describes what the term is about. -->
             <!-- Usage show a syntax example embedded in a <code> tag, using <br> tags for newlines and &emsp; for indentation -->
             <!-- Type is either the type name of a data type returned from `type(value)`, the name and symbols of operators, or left blank to keep the validator from failing. -->
-            <table>
+            <table id="syntax-table">
                 <thead>
                     <tr>
                         <th>Term</th>
@@ -170,39 +171,48 @@
                 This enables users to not only create their own functionality, but to also use functions provided by the application.
             </p>
             <!-- Sections within sections. -->
-            <section>
-                <h3 id="apps">Applications Using Lua</h3>
-                <ul>
-                    <li>Neovim text editor</li>
-                    <li>Nginx web server</li>
-                    <li>Cern for their Methodical Accelerator Design</li>
-                    <li>Love-2D game framework</li>
-                    <li>CC-Tweaked mod for Minecraft</li>
-                    <li>CERN for their Methodical Accelerator Design software</li>
-                    <li>Roblox</li>
-                    <li>Garry's Mod</li>
-                    <li>World of Warcraft</li>
-                    <li>Factorio</li>
-                    <li>itch.io's website</li>
-                </ul>
-            </section>
-            <section>
-                <h3 id="languages">Languages That Compile to Lua</h3>
-                <ul>
-                    <li>Moonscript</li>
-                    <li>Urn (lisp dialect)</li>
-                    <li>Haxe</li>
-                    <li>Teal (statically typed Lua)</li>
-                </ul>
-            </section>
+            <div class="usage-grid">
+                <section>
+                    <h3 id="apps">Applications Using Lua</h3>
+                    <ul>
+                        <li>Neovim text editor</li>
+                        <li>Nginx web server</li>
+                        <li>Cern for their Methodical Accelerator Design</li>
+                        <li>Love-2D game framework</li>
+                        <li>CC-Tweaked mod for Minecraft</li>
+                        <li>CERN for their Methodical Accelerator Design software</li>
+                        <li>Roblox</li>
+                        <li>Garry's Mod</li>
+                        <li>World of Warcraft</li>
+                        <li>Factorio</li>
+                        <li>itch.io's website</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 id="languages">Languages That Compile to Lua</h3>
+                    <ul>
+                        <li>Moonscript</li>
+                        <li>Urn (lisp dialect)</li>
+                        <li>Haxe</li>
+                        <li>Teal (statically typed Lua)</li>
+                    </ul>
+                </section>
+            </div>
         </section>
 
         <section id="book">
-            <h2>The Book</h2>
+            <h2>Books</h2>
             <!-- Behold, the special tag that was not covered in class! -->
             <!-- It embeds a webpage as a window in the document, making an HTTP request for the document and placing it inside the tag. -->
             <!-- Take a look in the inspector! -->
-            <iframe src="https://www.lua.org/pil/contents.html" height="400" width="600" title="Programming in Lua"></iframe>
+            <div class="books-container">
+                <figure class="lua-book"><iframe src="https://www.lua.org/pil/contents.html" title="Programming in Lua" class="grid-image"></iframe></figure>
+                <div class="secondary-books">
+                    <figure class="tweaked-book"><a href="https://tweaked.cc"><img src="images/cc-tweaked.png" alt="CC:Tweaked" class="grid-image"></a></figure>
+                    <figure class="love-book"><iframe src="https://sheepolution.com/learn/book/contents" title="How to LÖVE." class="grid-image"></iframe></figure>
+                    <figure class="roblox-book"><a href="https://www.amazon.ca/Teach-Yourself-Coding-Roblox-Hours/dp/0136829422/ref=pd_bxgy_d_sccl_2/140-1020616-9379034?pd_rd_w=qDvl9&content-id=amzn1.sym.9286c396-f989-473f-a51f-aeb6f0ce4e48&pf_rd_p=9286c396-f989-473f-a51f-aeb6f0ce4e48&pf_rd_r=D260HC3DSD2Q27NC3ZEM&pd_rd_wg=CgZzb&pd_rd_r=28ce34d8-bdef-49f3-80d2-363be0952747&pd_rd_i=0136829422&psc=1"><img src="images/roblox-lua.jpg" alt="Coding with Roblox Lua in 24 Hours: The Official Roblox Guide" class="grid-image"></a></figure>
+                </div>
+            </div>
         </section>
 
         <!-- Sources used for information. The citation format is similar to Wikipedia's. -->
@@ -215,6 +225,6 @@
                 <li>Pall, Mike (2005), <a href="https://luajit.org/luajit.html">LuaJit</a>, luajit.org</li>
             </ul>
         </section>
-    </article>
+    </main>
 </body>
 </html>

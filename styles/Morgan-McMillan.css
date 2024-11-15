@@ -1,0 +1,163 @@
+:root {
+    --nav-vertical-gap: 0.5em;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    margin: 8px;
+}
+
+h1 {
+    font-size: 250%;
+}
+
+h2 {
+    font-size: 200%;
+}
+
+/* Navbar */
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    background-color: darkslateblue;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.navbar > ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.left-link {
+    margin-right: 12.5%;
+    height: 1em;
+}
+
+.right-link {
+    margin-left: auto;
+    height: 1em;
+}
+
+/* TODO: make links look good */
+
+.top-nav a {
+    background-color: purple;
+    padding: 0.5em;
+    color: white;
+}
+
+.top-nav a:hover {
+    color: deeppink;
+}
+
+/* History section */
+
+.history-multicol {
+    columns: 3;
+    column-gap: 8em;
+    column-rule: 1px solid;
+    width: max(75%, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .history-multicol {
+        width: 100%;
+    }
+    
+}
+
+/* Syntax section */
+
+#syntax-table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid;
+}
+
+#syntax-table th, #syntax-table td {
+    border: 2px solid;
+    background-color: #f8f9fa;
+}
+
+#syntax-table td:nth-child(3n+1) {
+    text-align: center;
+}
+
+/* Usage section */
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Books section */
+
+.books-container {
+    display: grid;
+    grid-template-areas: /* The grid layout itself */
+    "Lua Others";
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0;
+    margin-right: 0;
+    height: 543px;
+    max-width: 1086px;
+}
+
+.secondary-books {
+    display: grid;
+    grid-area: Others;
+    aspect-ratio: 326/543;
+    height: 543px;
+    grid-template-areas:
+    "Tweaked Tweaked"
+    "Love Roblox";
+    grid-template-columns: 1fr 1fr;
+}
+
+.books-container figure{
+    margin: 0;
+    min-width: none;
+    min-width: none;
+    overflow: hidden;
+}
+
+.grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lua-book {
+    grid-area: Lua;
+}
+
+.tweaked-book {
+    grid-area: Tweaked;
+}
+
+.love-book {
+    grid-area: Love;
+}
+
+.love-book > iframe {
+    zoom: 25%;
+}
+
+.roblox-book {
+    grid-area: Roblox;
+}
+
+.roblox-book .grid-image {
+    object-fit: cover;
+}
