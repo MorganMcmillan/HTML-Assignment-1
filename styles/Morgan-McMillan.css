@@ -201,7 +201,7 @@ section {
 }
 
 section img {
-    display: block;
+    float: right;
     margin: 10px auto;
     max-width: 100%;
     border-radius: 10px;
