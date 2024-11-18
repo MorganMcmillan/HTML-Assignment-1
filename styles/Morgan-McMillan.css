@@ -1,5 +1,6 @@
 :root {
     --nav-vertical-gap: 0.5em;
+    --lua-blue: #008;
 }
 
 body {
@@ -83,7 +84,7 @@ h2 {
     border: 2px solid;
 }
 
-.syntax-table th, .syntax-table td {
+.syntax-table td {
     border: 2px solid;
     background-color: #f8f9fa;
 }
@@ -159,4 +160,74 @@ h2 {
 
 .roblox-book .grid-image {
     object-fit: cover;
+}
+
+/* I copied some code from Varun so I could have a consistent theme */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, var(--lua-blue) 60%, #f9f9f9 100%);
+    border-radius: 12px;
+}
+
+header > h1 {
+    color: white;
+}
+
+header > img {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+section h2 {
+    color: darkslateblue;
+}
+
+ul {
+    list-style-type: square;
+    margin-left: 20px;
+}
+
+ul li strong {
+    color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th {
+    background-color: var(--lua-blue);
+    border: 2px solid #000;
+    color: white;
 }
