@@ -47,8 +47,6 @@ h2 {
     height: 1em;
 }
 
-/* TODO: make links look good */
-
 .top-nav a {
     background-color: purple;
     padding: 0.5em;
@@ -79,18 +77,19 @@ h2 {
 
 /* Syntax section */
 
-#syntax-table {
+.syntax-table {
     border-collapse: collapse;
     table-layout: fixed;
     border: 2px solid;
 }
 
-#syntax-table th, #syntax-table td {
+.syntax-table th, .syntax-table td {
     border: 2px solid;
     background-color: #f8f9fa;
 }
 
-#syntax-table td:nth-child(3n+1) {
+/* Center first and last column */
+.syntax-table td:nth-child(3n+1) {
     text-align: center;
 }
 
