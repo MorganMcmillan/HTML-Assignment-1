@@ -6,38 +6,37 @@ main {
    margin: 8px;
 }
 
- .center {
-    background-color: grey;
-    border: 2px dotted black;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
- }
+.center {
+   background-color: grey;
+   border: 2px dotted black;
+   display:block;
+   margin-left: auto;
+   margin-right: auto;
+}
 
- table, th, td {
+table, th, td {
    border: 1px solid;
    border-collapse: collapse;
- }
+}
 
- th {
+th {
    text-align: center;
- }
+}
 
- td {
+td {
    text-align: center;
- }
+}
 
-
- #logo {
+#logo {
    background-color: lightblue;
    width: 200px;
    display: block;
    margin-left: auto;
    margin-right: auto;
 
- }
+}
 
- .ihatecolspan {
+.ihatecolspan {
    column-count: 2;
    column-rule: 1px solid;
    break-inside: avoid;
@@ -57,7 +56,7 @@ main {
    grid-column: 2;
 }
 
- section {
+section {
    margin: 20px;
    padding: 20px;
    background-color: #fff;
@@ -73,15 +72,14 @@ h2 {
    color: lightblue;
 }
 
-
- @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
    .ihatecolspan {
       column-count: 1;
-    }
+   }
 
-    .floated {
+   .floated {
       float: none;
-    }
+   }
 
    .gridcontainer {
       grid-template-columns: 100%;
@@ -89,21 +87,18 @@ h2 {
    .grid2 {
       grid-column: 1;
    }
- }
+}
 
- .floated {
+.floated {
 
    float:left;
    width: 125px;
- }
- 
-
+}
 
 .flex_container{
    display: flex;
    flex-wrap: wrap;
 }
-
 
 .top-nav {
    display: flex;
