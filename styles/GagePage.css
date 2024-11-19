@@ -10,6 +10,7 @@
 
  table, th, td {
    border: 1px solid;
+   border-collapse: collapse;
  }
 
  th {
@@ -32,8 +33,8 @@
 
  .ihatecolspan {
    column-count: 2;
-   column-width: auto;
    column-rule: 1px solid;
+   break-inside: avoid;
 }
 
 .gridcontainer {
