@@ -1,4 +1,10 @@
+body {
+   margin: 0;
+}
 
+main {
+   margin: 8px;
+}
 
  .center {
     background-color: grey;
